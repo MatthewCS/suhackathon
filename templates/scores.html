@@ -1,0 +1,56 @@
+<center>
+
+    <table>
+
+        <tr class="title">
+            <th>IP</th>
+            <th>FTP</th>
+            <th>SSH</th>
+            <th>SMTP</th>
+            <th>HTTP</th>
+            <th>RDP</th>
+            <th>Points</th>
+        </tr>
+
+        {% for score in scoreboard %}
+
+            <tr class="data" id={{ score[0] }}>
+                <th class="ip">{{ score[0] }}</th>
+                {% if score[1] == "UP" %}
+                    <th class="service" style="background-color:green" id="ftp">{{ score[1] }}</th>
+                {% else %}
+                    <th class="service" style="background-color:red" id="ftp">{{ score[1] }}</th>
+                {% endif %}
+
+                {% if score[2] == "UP" %}
+                    <th class="service" style="background-color:green" id="ssh">{{ score[2] }}</th>
+                {% else %}
+                    <th class="service" style="background-color:red" id="ssh">{{ score[2] }}</th>
+                {% endif %}
+
+                {% if score[3] == "UP" %}
+                    <th class="service" style="background-color:green" id="smtp">{{ score[3] }}</th>
+                {% else %}
+                    <th class="service" style="background-color:red" id="smtp">{{ score[3] }}</th>
+                {% endif %}
+
+                {% if score[4] == "UP" %}
+                    <th class="service" style="background-color:green"  id="http">{{ score[4] }}</th>
+                {% else %}
+                    <th class="service" style="background-color:red" id="http">{{ score[4] }}</th>
+                {% endif %}
+
+                {% if score[5] == "UP" %}
+                    <th class="service" style="background-color:green"  id="rdp">{{ score[5] }}</th>
+                {% else %}
+                    <th class="service" style="background-color:red"  id="rdp">{{ score[5] }}</th>
+                {% endif %}
+
+                <th class="score">{{ score[6 ]}}</th>
+            </tr>
+
+        {% endfor %}
+
+    </table>
+
+</center>

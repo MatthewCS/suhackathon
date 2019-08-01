@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Scoreboard</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">//Because of course it requires jquery</script>
+</head>
+
+<style>
+
+body {
+    background-color: #323437;
+    font-family: Sans-Serif;}
+table {
+    background-color: #fefefe;
+    width: 80%;
+    border-spacing: 5px;}
+.title {
+    font-size: 1.5vw;
+}
+.data {
+    font-size: 1vw;
+}
+
+</style>
+
+<body>
+
+<div id="content"><!--> we will put our scores in this div <!--></div>
+
+<script type="text/javascript">
+
+function update_page() {
+
+    $.ajax({
+        url:"/scores",
+        type:"get",
+        success: function(response) {
+            console.log(response);
+            $("#content").html(response);
+        },
+        error: function(e) {
+            $("#content").html("ERROR: " + str(e));
+        }
+    });
+
+}
+
+update_page();
+
+// Update the page every 5 seconds to check for new scores
+window.setInterval(function(){
+    update_page();
+}, 5000);
+
+</script>
+
+</body>
+
+</html>
