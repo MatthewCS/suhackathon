@@ -5,7 +5,7 @@
 This is a simple webapp for an SU course I attended.
 The webapp is intended to check for open ports over a given range of IPs, then update a scoreboard based on which ports are open.
 The intention was to keep score for the course's hackathon.
-While teams attempt to start and maintain different services, (FTP, HTTP, etc.) a group of hackers tries to bring those services down.
+While teams attempt to start and maintain different services (FTP, HTTP, etc.), a group of hackers tries to bring those services down.
 
 * **NOTES:**
 	+ Requires Flask
